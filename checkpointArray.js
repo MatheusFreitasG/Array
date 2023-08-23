@@ -1,4 +1,4 @@
-const hobbies = ['programar','ouvir musica','jogar volei'];
+const hobbies = ['programar','ouvir musica','jogar volei', 'jogar', 'festas'];
 console.log(hobbies[0]);
 console.log(hobbies[1]);
 console.log(hobbies[2]);
@@ -41,10 +41,21 @@ const nomeLivro = hobbies.map(function(hobby) {
 });
 console.log(nomeLivro);
 
+const catalogoLivros = ['Harry potter', 'Lino', 'Animais fantasticos']
+const mapCatalogo = catalogoLivros.map(function(hobby){
+    return 'o livro que eu gosto é ' + hobby;
+});
+console.log(mapCatalogo)
+
 const dHobbies = hobbies.filter(function(hobby) {
     return hobby[0] === 'j';
 });
 console.log(dHobbies)
+
+const filterHobbies = hobbies.filter(function(hobby) {
+    return hobby[0] === 's';
+});
+console.log(filterHobbies)
 
 const runningPosition = hobbies.findIndex(function(hobby) {
     return hobby === 'jogar volei';
@@ -62,6 +73,9 @@ console.log("Eu tenho um hobby que começa com 's'? " + hasSHobby);
 
 const allShort = hobbies.every(function(hobby) { return hobby.length < 15; });
 console.log("Todos os meus hobbies têm menos de 15 letras? " + allShort);
+
+const minuShort = hobbies.every(function(hobby) { return hobby === hobby.toLocaleLowerCase(); });
+console.log("Todos os meus hobbies têm letras minusculas? " + minuShort);
 
 const elevenLetterHobby = hobbies.find(function(hobby) {
     return hobby.length === 11; });
